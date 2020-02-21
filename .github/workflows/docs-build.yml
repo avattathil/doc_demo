@@ -1,0 +1,25 @@
+name: update_docs
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Install  asciidoc package
+      run:  sudo apt-get update && sudo apt-get upgrade -y asciidoctor
+
+    - name: Build
+      run:  asciidoctor -D docs --backend=html5 index.adoc  -o index.html
+
+    - name: Deploy
+      uses: ppeaceiris/actions-gh-pages@v3
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.DOCS_GHT }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./docs
