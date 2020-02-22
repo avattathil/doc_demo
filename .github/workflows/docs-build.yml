@@ -31,7 +31,7 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        github_token: ${{ secrets.GH_TOKEN }}
         branch: gh-pages
     - name: Print execution time
       run: echo "Time ${{ steps.adoc.outputs.time }}"
