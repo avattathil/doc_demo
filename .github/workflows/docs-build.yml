@@ -12,33 +12,34 @@ jobs:
     - name: Checkout master
       uses: actions/checkout@v2
     - name: Get build container
-      id: adocbuild
+      id: adoc
       uses: avattathil/asciidoctor-action@master
       with:
           program: "asciidoctor -D docs --backend=html5 -o index.html -a toc2 docs/index.adoc"
     - name: upload assets
       uses: actions/upload-artifact@v1
       with:
-        name: adocbuild
+        name: adoc
         path: ./
     - name: Print execution time
-      run: echo "Time ${{ steps.adocbuild.outputs.time }}"
+      run: echo "Time ${{ steps.adoc.outputs.time }}"
     - name: Checkout gh-pages
-      uses: actions/checkout@v2
+      uses: actions/checkout@v1
       with:
-        refs: gh-pages  
+        refs: gh-pages
     - uses: actions/download-artifact@v1
       with:
-        name: adocbuild
+        name: adoc
         path: ./
     - name: Push updates
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        git add -A
         git commit -m "Update docs" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}       
+        github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
     - name: Print execution time
-      run: echo "Time ${{ steps.adocbuild.outputs.time }}"  
+      run: echo "Time ${{ steps.adoc.outputs.time }}"
