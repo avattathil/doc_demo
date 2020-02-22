@@ -27,6 +27,6 @@ jobs:
         git add -A
         git commit -a -m "update documentation"
         ORIGIN=$(git remote get-url origin | sed -e s/^git//g)
-        git push {{ secrets.ACTIONS_DEPLOY_KEY }}@$ORIGIN gh-pages 
+        git push ${{ secrets.ACTIONS_DEPLOY_KEY }}@$ORIGIN gh-pages 
     - name: Print execution time
       run: echo "Time ${{ steps.adoc.outputs.time }}"
