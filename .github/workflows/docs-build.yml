@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-18.04
     name: asciidoc builder
     steps:
-    - name: Checkout code
+    - name: Checkout master
       uses: actions/checkout@v2
     - name: Get build container
       id: adocbuild
@@ -23,11 +23,7 @@ jobs:
         path: ./
     - name: Print execution time
       run: echo "Time ${{ steps.adocbuild.outputs.time }}"
-  publish-adocs:
-    runs-on: ubuntu-18.04
-    name: update gh-pages
-    steps:
-    - name: Checkout code
+    - name: Checkout gh-pages
       uses: actions/checkout@v2
       with:
         refs: gh-pages  
