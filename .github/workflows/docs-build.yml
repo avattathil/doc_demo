@@ -26,10 +26,12 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git remote set-url origin --push https://avattathil:${{ secrets.ACTIONS_DEPLOY_KEY }}@github.com:avattathil/doc_demo.git
-        git add -A
         git commit -a -m "update documentation"
-        ORIGIN=$(git remote get-url origin | sed -e s/^git//g)
-        #git push ${{ secrets.ACTIONS_DEPLOY_KEY }}@$ORIGIN  
+        git add -A
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        branch: gh-pages
     - name: Print execution time
       run: echo "Time ${{ steps.adoc.outputs.time }}"
