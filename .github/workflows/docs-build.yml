@@ -13,8 +13,8 @@ jobs:
       uses: actions/checkout@v2
       with:
         refs: gh-pages
-    - name: Get adoc file
-      run: git checkout master docs
+    - name: Get adoc file from master
+      run: git switch gh-pages && git restore -s master docs
     - name: Get build container
       id: adoc
       uses: avattathil/asciidoctor-action@master
@@ -27,8 +27,8 @@ jobs:
         git add -A
         git commit -a -m "update documentation"
         ORIGIN=$(git remote get-url origin | sed -e s/^git//g)
-        git push "https://{{ secrets.ACTIONS_DEPLOY_KEY }}@github.com/avattathil/doc_demo/ gh-pages" 
+        git push "https://{{ secrets.ACTIONS_DEPLOY_KEY }}@github.com/avattathil/doc_demo/" 
         echo $ORGIN
-        #git push ${{ secrets.ACTIONS_DEPLOY_KEY }}@$ORIGIN gh-pages 
+        #git push ${{ secrets.ACTIONS_DEPLOY_KEY }}@$ORIGIN  
     - name: Print execution time
       run: echo "Time ${{ steps.adoc.outputs.time }}"
