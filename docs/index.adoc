@@ -1,6 +1,6 @@
 = Building a Modular and Scalable Virtual Network Architecture with Amazon VPC
 
-== Quick Start Reference Deployment
+=== Quick Start Reference Deployment (2020)
 
 :imagesdir: docs/images
 
