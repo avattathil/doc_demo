@@ -13,7 +13,9 @@ jobs:
       uses: actions/checkout@v2
     - name: Get adoc file from master
       run: |
-           git checkout -t -b gh-pages origin/gh-pages
+           git remote update
+           git fetch 
+           git checkout --track origin/gh-pages
            git restore -s master docs
     - name: Get build container
       id: adoc
