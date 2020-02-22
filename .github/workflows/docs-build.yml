@@ -9,28 +9,17 @@ jobs:
     runs-on: ubuntu-18.04
     name: asciidoc builder
     steps:
-    - name: Checkout master
+    - name: Checkout gh-pages
       uses: actions/checkout@v2
+      with:
+        refs: gh-pages
+    - name: Get adoc file
+      run: git checkout master docs
     - name: Get build container
       id: adoc
       uses: avattathil/asciidoctor-action@master
       with:
           program: "asciidoctor -D docs --backend=html5 -o index.html -a toc2 docs/index.adoc"
-    - name: upload assets
-      uses: actions/upload-artifact@v1
-      with:
-        name: adoc
-        path: . 
-    - name: Print execution time
-      run: echo "Time ${{ steps.adoc.outputs.time }}"
-    - name: Checkout gh-pages
-      uses: actions/checkout@v1
-      with:
-        refs: gh-pages
-    - uses: actions/download-artifact@v1
-      with:
-        name: adoc
-        path: .
     - name: Push updates
       run: |
         git config --local user.email "action@github.com"
