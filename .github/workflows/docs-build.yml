@@ -14,7 +14,7 @@ jobs:
       with:
         refs: gh-pages
     - name: Get adoc file from master
-      run: git switch gh-pages && git restore -s master docs
+      run: git checkout master && git switch gh-pages && git restore -s master docs
     - name: Get build container
       id: adoc
       uses: avattathil/asciidoctor-action@master
