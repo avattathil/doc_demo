@@ -11,16 +11,20 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
     - name: Get build container
       id: adocbuild
       uses: avattathil/asciidoctor-action@master
       with:
-          program: "asciidoctor -D docs --backend=html5 -o index.html -a toc2 docs/index.adoc"
+          program: "_ADOCS=$(mktemp -d) && asciidoctor -D ${_ADOCS} --backend=html5 -o index.html -a toc2 docs/index.adoc"
+    - name: Push to ghpages branch
+      run: |
+          git config --global avattathil 'Tony Vattathil'
+          git config --global user.email 'avattathil@gmail.com'
+          git checkout gh-pages
+          mv ${_ADOCS}/* .
+          git add -A
+          git commit -a -m 'Update Docs'
+          git push
     - name: Print execution time
       run: echo "Time ${{ steps.adocbuild.outputs.time }}"
-    - name: Deploy docs to ghpages
-      uses: peaceiris/actions-gh-pages@v3
-      env:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./
