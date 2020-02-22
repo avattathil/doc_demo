@@ -1,62 +1,10 @@
-Building a Modular and Scalable Virtual Network Architecture with Amazon
-VPC
+= Building a Modular and Scalable Virtual Network Architecture with Amazon VPC
 
-Quick Start Reference Deployment
+== Quick Start Reference Deployment
 
-Santiago Cardenas +
-Solutions Architect, AWS Quick Start Reference Team
+:imagesdir: docs/images
 
-July 2016 +
-Last updated: July 2017 (see link:#document-revisions[revisions])
-
-____
-This guide is also available in HTML format at
-https://fwd.aws/9VdxN[https://docs.aws.amazon.com/quickstart/latest/vpc/].
-____
-
-image:media/image1.png[image,width=140,height=83]
-
-== Contents
-
-link:#overview[Overview 3]
-
-link:#quick-links[Quick Links 3]
-
-link:#cost[Cost 4]
-
-link:#architecture[Architecture 4]
-
-link:#aws-services[AWS Services 6]
-
-link:#best-practices[Best Practices 6]
-
-link:#subnet-sizing[Subnet Sizing 8]
-
-link:#deployment-steps[Deployment Steps 9]
-
-link:#step-1.-prepare-an-aws-account[Step 1. Prepare an AWS Account 10]
-
-link:#step-2.-launch-the-stack[Step 2. Launch the Stack 11]
-
-link:#step-3.-add-aws-services-or-other-applications[Step 3. Add AWS
-Services or Other Applications 14]
-
-link:#troubleshooting[Troubleshooting 15]
-
-link:#security[Security 16]
-
-link:#public-and-private-subnets[Public and Private Subnets 16]
-
-link:#using-security-groups-and-network-acls[Using Security Groups and
-Network ACLs 16]
-
-link:#additional-resources[Additional Resources 18]
-
-link:#github-repository[GitHub Repository 19]
-
-link:#document-revisions[Document Revisions 19]
-
-About This Guide
+== About This Guide
 
 This Quick Start reference deployment guide discusses architectural
 considerations and configuration steps for deploying a modular Amazon
@@ -143,14 +91,13 @@ pages.
 Deploying this Quick Start with the *default parameters* builds the
 following virtual networking environment in the AWS Cloud.
 
-{empty}[#figure1 .anchor]####image:media/image2.png[image,width=647,height=360]
+image::architecture.png[Architecture,300,200]
 
 * Note that the IP addresses exclude five addresses from each subnet
 that are reserved and unavailable for use.
 
 Figure 1: Modular Amazon VPC architecture on AWS
-(https://docs.aws.amazon.com/quickstart/latest/vpc/images/quickstart-vpc-design-fullscreen.png[full-screen
-view])
+(https://docs.aws.amazon.com/quickstart/latest/vpc/images/quickstart-vpc-design-fullscreen.png[full-screen view])
 
 The AWS CloudFormation template sets up the virtual network and creates
 networking resources.

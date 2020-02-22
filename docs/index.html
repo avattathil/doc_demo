@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Contents</title>
+<title>Building a Modular and Scalable Virtual Network Architecture with Amazon VPC</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,10 +438,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
+<h1>Building a Modular and Scalable Virtual Network Architecture with Amazon VPC</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_contents">Contents</a></li>
+<li><a href="#_quick_start_reference_deployment">Quick Start Reference Deployment</a></li>
+<li><a href="#_about_this_guide">About This Guide</a></li>
 <li><a href="#_overview">Overview</a>
 <ul class="sectlevel2">
 <li><a href="#_quick_links">Quick Links</a></li>
@@ -476,94 +478,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<div class="paragraph">
-<p>Building a Modular and Scalable Virtual Network Architecture with Amazon
-VPC</p>
+<div class="sect1">
+<h2 id="_quick_start_reference_deployment">Quick Start Reference Deployment</h2>
+<div class="sectionbody">
+
 </div>
-<div class="paragraph">
-<p>Quick Start Reference Deployment</p>
-</div>
-<div class="paragraph">
-<p>Santiago Cardenas<br>
-Solutions Architect, AWS Quick Start Reference Team</p>
-</div>
-<div class="paragraph">
-<p>July 2016<br>
-Last updated: July 2017 (see <a href="#document-revisions">revisions</a>)</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>This guide is also available in HTML format at
-<a href="https://fwd.aws/9VdxN">https://docs.aws.amazon.com/quickstart/latest/vpc/</a>.</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="media/image1.png" alt="image" width="140" height="83"></span></p>
 </div>
 <div class="sect1">
-<h2 id="_contents">Contents</h2>
+<h2 id="_about_this_guide">About This Guide</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><a href="#overview">Overview 3</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#quick-links">Quick Links 3</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#cost">Cost 4</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#architecture">Architecture 4</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#aws-services">AWS Services 6</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#best-practices">Best Practices 6</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#subnet-sizing">Subnet Sizing 8</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#deployment-steps">Deployment Steps 9</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#step-1.-prepare-an-aws-account">Step 1. Prepare an AWS Account 10</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#step-2.-launch-the-stack">Step 2. Launch the Stack 11</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#step-3.-add-aws-services-or-other-applications">Step 3. Add AWS
-Services or Other Applications 14</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#troubleshooting">Troubleshooting 15</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#security">Security 16</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#public-and-private-subnets">Public and Private Subnets 16</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#using-security-groups-and-network-acls">Using Security Groups and
-Network ACLs 16</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#additional-resources">Additional Resources 18</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#github-repository">GitHub Repository 19</a></p>
-</div>
-<div class="paragraph">
-<p><a href="#document-revisions">Document Revisions 19</a></p>
-</div>
-<div class="paragraph">
-<p>About This Guide</p>
-</div>
 <div class="paragraph">
 <p>This Quick Start reference deployment guide discusses architectural
 considerations and configuration steps for deploying a modular Amazon
@@ -675,8 +598,10 @@ pages.</p>
 <p>Deploying this Quick Start with the <strong>default parameters</strong> builds the
 following virtual networking environment in the AWS Cloud.</p>
 </div>
-<div class="paragraph">
-<p>[<mark>figure1 .anchor]</mark>###<span class="image"><img src="media/image2.png" alt="image" width="647" height="360"></span></p>
+<div class="imageblock">
+<div class="content">
+<img src="docs/images/architecture.png" alt="Architecture" width="300" height="200">
+</div>
 </div>
 <div class="ulist">
 <ul>
@@ -688,8 +613,7 @@ that are reserved and unavailable for use.</p>
 </div>
 <div class="paragraph">
 <p>Figure 1: Modular Amazon VPC architecture on AWS
-(<a href="https://docs.aws.amazon.com/quickstart/latest/vpc/images/quickstart-vpc-design-fullscreen.png">full-screen
-view</a>)</p>
+(<a href="https://docs.aws.amazon.com/quickstart/latest/vpc/images/quickstart-vpc-design-fullscreen.png">full-screen view</a>)</p>
 </div>
 <div class="paragraph">
 <p>The AWS CloudFormation template sets up the virtual network and creates
@@ -1155,7 +1079,7 @@ where you want to deploy the Quick Start on AWS.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="media/image3.png" alt="image" width="138" height="282"></span></p>
+<p><span class="image"><img src="docs/images/media/image3.png" alt="image" width="138" height="282"></span></p>
 </div>
 <div class="paragraph">
 <p>Figure 2: Choosing an AWS Region</p>
@@ -1183,7 +1107,7 @@ name, and then choose <strong>Create</strong>.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="media/image4.png" alt="image" width="634" height="307"></span></p>
+<p><span class="image"><img src="docs/images/media/image4.png" alt="image" width="634" height="307"></span></p>
 </div>
 <div class="paragraph">
 <p>Figure 3: Creating a key pair</p>
@@ -1917,7 +1841,7 @@ defaults</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-02-22 09:24:43 UTC
+Last updated 2020-02-22 09:35:32 UTC
 </div>
 </div>
 </body>
