@@ -11,8 +11,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
     - name: Get build container
       id: adocbuild
       uses: avattathil/asciidoctor-action@master
