@@ -9,10 +9,12 @@ jobs:
     runs-on: ubuntu-18.04
     name: asciidoc builder
     steps:
-    - name: Checkout gh-pages
+    - name: Checkout
       uses: actions/checkout@v2
     - name: Get adoc file from master
-      run: git checkout gh-pages && git restore -s master docs
+      run: |
+           git checkout -b gh-pages
+           git restore -s master docs
     - name: Get build container
       id: adoc
       uses: avattathil/asciidoctor-action@master
