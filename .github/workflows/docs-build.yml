@@ -4,7 +4,6 @@ on:
   push:
     branches:
     - master
-
 jobs:
   build-deploy:
     runs-on: ubuntu-18.04
@@ -12,11 +11,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    - name: Build AsciiDoc step
+    - name: Get build container
       id: adocbuild
       uses: avattathil/asciidoctor-action@master
       with:
-        program: "asciidoctor -D docs --backend=html5 index.adoc  -o index.html" 
+          program: "asciidoctor -D docs --backend=html5 -o index.html docs/index.adoc"
     - name: Print execution time
       run: echo "Time ${{ steps.adocbuild.outputs.time }}"
     - name: Deploy docs to ghpages
