@@ -5,7 +5,7 @@ on:
     branches:
     - master
 jobs:
-  build-deploy:
+  build-adocs:
     runs-on: ubuntu-18.04
     name: asciidoc builder
     steps:
@@ -23,3 +23,26 @@ jobs:
         path: ./
     - name: Print execution time
       run: echo "Time ${{ steps.adocbuild.outputs.time }}"
+  publish-adocs:
+    runs-on: ubuntu-18.04
+    name: update gh-pages
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        refs: gh-pages  
+    - uses: actions/download-artifact@v1
+      with:
+        name: adocbuild
+        path: ./
+    - name: Push updates
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Update docs" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}       
+    - name: Print execution time
+      run: echo "Time ${{ steps.adocbuild.outputs.time }}"  
