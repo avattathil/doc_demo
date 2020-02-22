@@ -26,6 +26,7 @@ jobs:
         git config --local user.name "GitHub Action"
         git add -A
         git commit -a -m "update documentation"
-        git push "https://{{ secrets.ACTIONS_DEPLOY_KEY }}@github.com/avattathil/doc_demo" gh-pages 
+        ORIGIN=$(git remote get-url origin | sed -e s/'git@'/{{ secrets.ACTIONS_DEPLOY_KEY }}@/g)
+        git push $ORIGIN gh-pages 
     - name: Print execution time
       run: echo "Time ${{ steps.adoc.outputs.time }}"
