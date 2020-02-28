@@ -1,8 +1,13 @@
 = Building a Modular and Scalable Virtual Network Architecture with Amazon VPC
+:imagesdir: images
+:includedir: include
+:icons: font
+:toc2: left
+:toc-title:  Start Reference Deployment
+:toclevels: 3
 
-=== Quick Start Reference Deployment (2020)
+include::{includedir}/css-switch.script[]
 
-:imagesdir: docs/images
 
 == About This Guide
 
@@ -91,7 +96,7 @@ pages.
 Deploying this Quick Start with the *default parameters* builds the
 following virtual networking environment in the AWS Cloud.
 
-image::architecture.png[Architecture,300,200]
+image::architecture.png[Architecture,640,480]
 
 * Note that the IP addresses exclude five addresses from each subnet
 that are reserved and unavailable for use.
@@ -371,147 +376,11 @@ template, provide values for parameters that require your input, and
 customize the default settings as necessary. For example, you can change
 the network configuration parameters if you want to reconfigure the
 subnet segmentation used for the VPC, as discussed earlier in the
-link:#subnet-sizing[Subnet Sizing] section.
+link:#subnet_sizing[Subnet Sizing] section.
 
-*Availability Zone Configuration:*
+=== Stack Parameters
 
-[cols=",,",options="header",]
-|===
-|Parameter label (name) |Default |Description
-|Availability Zones +
-(AvailabilityZones) |_Requires input_ |The specific Availability Zones
-you want to use for resource distribution. This field displays the
-available zones within your selected region. You can choose 2, 3, or 4
-Availability Zones from this list. The logical order of your selections
-is preserved in your deployment. After you make your selections, make
-sure that the value of the *Number of Availability Zones* parameter
-matches the number of selections.
-
-|Number of Availability Zones +
-(NumberOfAZs) |_Requires input_ |The number of Availability Zones you
-want to use in your deployment, to ensure high availability of
-resources. You can specify 2, 3, or 4 Availability Zones. This count
-must match the number of selections you make from the *Availability
-Zones* parameter; otherwise, your deployment will fail with an AWS
-CloudFormation template validation error. (Note that some regions
-provide only 2 or 3 Availability Zones.)
-|===
-
-*Network Configuration:*
-
-[cols=",,",options="header",]
-|===
-|Parameter label (name) |Default |Description
-|VPC CIDR +
-(VPCCIDR) |10.0.0.0/16 |CIDR block for the Amazon VPC.
-
-|Public subnet 1 CIDR +
-(PublicSubnet1CIDR) |10.0.128.0/20 |CIDR block for public (DMZ) subnet 1
-located in Availability Zone 1.
-
-|Public subnet 2 CIDR +
-(PublicSubnet2CIDR) |10.0.144.0/20 |CIDR block for public (DMZ) subnet 2
-located in Availability Zone 2.
-
-|Public subnet 3 CIDR +
-(PublicSubnet3CIDR) |10.0.160.0/20 |CIDR block for public (DMZ) subnet 3
-located in Availability Zone 3.
-
-|Public subnet 4 CIDR +
-(PublicSubnet4CIDR) |10.0.176.0/20 |CIDR block for public (DMZ) subnet 4
-located in Availability Zone 4.
-
-|Create private subnets +
-(CreatePrivateSubnets) |true |Set to *false* to create only public
-subnets in the VPC. If *true*, the CIDR blocks for those subnets will be
-determined by the following four parameters. If *false*, the CIDR
-parameters for all private subnets will be ignored.
-
-|Private subnet 1A CIDR +
-(PrivateSubnet1ACIDR) |10.0.0.0/19 |CIDR block for private subnet 1A
-located in Availability Zone 1.
-
-|Private subnet 2A CIDR +
-(PrivateSubnet2ACIDR) |10.0.32.0/19 |CIDR block for private subnet 2A
-located in Availability Zone 2.
-
-|Private subnet 3A CIDR +
-(PrivateSubnet3ACIDR) |10.0.64.0/19 |CIDR block for private subnet 3A
-located in Availability Zone 3.
-
-|Private subnet 4A CIDR +
-(PrivateSubnet4ACIDR) |10.0.96.0/19 |CIDR block for private subnet 4A
-located in Availability Zone 4.
-
-|Create additional private subnets with dedicated network ACLs +
-(CreateAdditionalPrivateSubnets) |false |Set to *true* to create a
-private subnet with dedicated network ACL in each Availability Zone for
-additional security. If *true*, the IP address ranges for the CIDR block
-will be determined by the following four parameters. If *false*
-(default), the CIDR parameters for those subnets will be ignored. See
-the link:#security[Security] section to read about using network ACLs
-vs. security groups.
-
-|Private subnet 1B with dedicated network ACL CIDR +
-(PrivateSubnet1BCIDR) |10.0.192.0/21 |CIDR block for private subnet 1B
-with dedicated network ACL, located in Availability Zone 1.
-
-|Private subnet 2B with dedicated network ACL CIDR +
-(PrivateSubnet2BCIDR) |10.0.200.0/21 |CIDR block for private subnet 2B
-with dedicated network ACL, located in Availability Zone 2.
-
-|Private subnet 3B with dedicated network ACL CIDR +
-(PrivateSubnet3BCIDR) |10.0.208.0/21 |CIDR block for private subnet 3B
-with dedicated network ACL, located in Availability Zone 3.
-
-|Private subnet 4B with dedicated network ACL CIDR +
-(PrivateSubnet4BCIDR) |10.0.216.0/21 |CIDR block for private subnet 4B
-with dedicated network ACL, located in Availability Zone 4.
-
-|VPC Tenancy +
-(VPCTenancy) |default |The tenancy attribute for the instances launched
-into the VPC. By default, all instances in the VPC run as shared-tenancy
-instances. Set this parameter to *dedicated* to run them as
-single-tenancy instances instead. For more information, see
-http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html[Dedicated
-Instances] in the _Amazon EC2 User Guide_.
-|===
-
-*Amazon EC2 Configuration:*
-
-[cols=",,",options="header",]
-|===
-|Parameter label (name) |Default |Description
-|Key pair name +
-(KeyPairName) |_Requires input_ |Public/private key pair, which allows
-you to connect securely to your instance after it launches. When you
-created an AWS account, this is the key pair you created in your
-preferred region.
-
-|NAT instance type +
-(NATInstanceType) |t2.small |EC2 instance type for NAT instances. This
-value is used only when the Quick Start deploys NAT instances, when the
-AWS Region you selected doesn’t support NAT gateways.
-|===
-
-When you finish reviewing and customizing the parameters, choose *Next*.
-
-*Note* You can also https://fwd.aws/px53q[download the template] and
-edit it to create your own parameters based on your specific deployment
-scenario.
-
-[arabic, start=6]
-. On the *Options* page, you can
-https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html[specify
-tags] (key-value pairs) for resources in your stack and
-https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html[set
-advanced options]. When you’re done, choose *Next*.
-. On the *Review* page, review and confirm the template settings. Under
-*Capabilities*, select the check box to acknowledge that the template
-will create IAM resources.
-. Choose *Create* to deploy the stack.
-. Monitor the status of the stack. When the status is *CREATE_COMPLETE*,
-the stack is ready.
+include::{includedir}/params.adoc[]
 
 === Step 3. Add AWS Services or Other Applications
 
