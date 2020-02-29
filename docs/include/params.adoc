@@ -215,16 +215,16 @@ private subnets B, in format Key=Value (Optional)
 |**VPC Tenancy**(`VPCTenancy`) |default |The allowed tenancy of
 instances launched into the VPC
 |=======================================================================
-[[change-me-nat-instance-configuration]]
-CHANGE-ME: NAT Instance Configuration
+[[remove-me-nat-instance-configuration]]
+REMOVE-ME: NAT Instance Configuration
 -------------------------------------
 
 [width="100%",cols="46%,8%,46%",options="header",]
 |=======================================================================
 |Parameter label (name) |Default |Description
-|**CHANGE-ME: Key pair name**(`KeyPairName`) |deprecated |CHANGE-ME. NAT
+|**REMOVE-ME: Key pair name**(`KeyPairName`) |deprecated |REMOVE-ME. NAT
 gateways are now supported in all regions.
 
-|**CHANGE-ME: NAT instance type**(`NATInstanceType`) |deprecated
-|CHANGE-ME. NAT gateways are now supported in all regions.
+|**REMOVE-ME: NAT instance type**(`NATInstanceType`) |deprecated
+|REMOVE-ME. NAT gateways are now supported in all regions.
 |=======================================================================
