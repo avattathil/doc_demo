@@ -1,4 +1,6 @@
-IMPORTANT: 2020-02-29 06:44:22[[availability-zone-configuration]]
+IMPORTANT: Updated on 2020-02-29 06:53:54
+
+[[availability-zone-configuration]]
 Availability Zone Configuration
 -------------------------------
 
