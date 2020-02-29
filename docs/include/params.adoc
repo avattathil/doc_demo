@@ -110,12 +110,10 @@ gateways are now supported in all regions.
 |**REMOVE-ME: NAT instance type**(`NATInstanceType`) |deprecated
 |REMOVE-ME. NAT gateways are now supported in all regions.
 |===
-[[availability-zone-configuration]]
-Availability Zone Configuration
--------------------------------
+== Availability Zone Configuration
 
 [width="100%",cols="27%,11%,62%",options="header",]
-|=======================================================================
+|===
 |Parameter label (name) |Default |Description
 |**Availability Zones**(`AvailabilityZones`) |**Requires Input** |List
 of Availability Zones to use for the subnets in the VPC. Note: The
@@ -124,13 +122,11 @@ logical order is preserved.
 |**Number of Availability Zones**(`NumberOfAZs`) |2 |Number of
 Availability Zones to use in the VPC. This must match your selections in
 the list of Availability Zones parameter.
-|=======================================================================
-[[network-configuration]]
-Network Configuration
----------------------
+|===
+== Network Configuration
 
 [width="100%",cols="29%,4%,67%",options="header",]
-|=======================================================================
+|===
 |Parameter label (name) |Default |Description
 |**VPC CIDR**(`VPCCIDR`) |10.0.0.0/16 |CIDR block for the VPC
 
@@ -184,7 +180,7 @@ private subnets A, in format Key=Value (Optional)
 ACLs**(`CreateAdditionalPrivateSubnets`) |false |Set to true to create a
 network ACL protected subnet in each Availability Zone. If false, the
 CIDR parameters for those subnets will be ignored. If true, it also
-requires that the 'Create private subnets' parameter is also true to
+requires that the `Create private subnets' parameter is also true to
 have any effect.
 
 |**Private subnet 1B with dedicated network ACL
@@ -214,17 +210,15 @@ private subnets B, in format Key=Value (Optional)
 
 |**VPC Tenancy**(`VPCTenancy`) |default |The allowed tenancy of
 instances launched into the VPC
-|=======================================================================
-[[remove-me-nat-instance-configuration]]
-REMOVE-ME: NAT Instance Configuration
--------------------------------------
+|===
+== CHANGE-ME: NAT Instance Configuration
 
 [width="100%",cols="46%,8%,46%",options="header",]
-|=======================================================================
+|===
 |Parameter label (name) |Default |Description
-|**REMOVE-ME: Key pair name**(`KeyPairName`) |deprecated |REMOVE-ME. NAT
+|**CHANGE-ME: Key pair name**(`KeyPairName`) |deprecated |CHANGE-ME. NAT
 gateways are now supported in all regions.
 
-|**REMOVE-ME: NAT instance type**(`NATInstanceType`) |deprecated
-|REMOVE-ME. NAT gateways are now supported in all regions.
-|=======================================================================
+|**CHANGE-ME: NAT instance type**(`NATInstanceType`) |deprecated
+|CHANGE-ME. NAT gateways are now supported in all regions.
+|===
