@@ -378,8 +378,6 @@ the network configuration parameters if you want to reconfigure the
 subnet segmentation used for the VPC, as discussed earlier in the
 link:#subnet_sizing[Subnet Sizing] section.
 
-=== Stack Parameters
-
 include::{includedir}/params.adoc[]
 
 === Step 3. Add AWS Services or Other Applications
