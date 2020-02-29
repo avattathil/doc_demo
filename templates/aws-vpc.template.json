@@ -47,7 +47,7 @@
                 },
                 {
                     "Label": {
-                        "default": "Deprecated: NAT Instance Configuration"
+                        "default": "REMOVE-ME Deprecated: NAT Instance Configuration"
                     },
                     "Parameters": [
                         "KeyPairName",
