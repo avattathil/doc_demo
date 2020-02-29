@@ -9,6 +9,7 @@ from pytablewriter import MarkdownTableWriter
 r = requests.get('https://raw.githubusercontent.com/avattathil/doc_demo/master/templates/aws-vpc.template.json')
 
 template = cfnlint.decode.cfn_yaml.loads(r.content)
+p_file = 'docs/include/params.adoc',
 
 label_mappings = {}
 reverse_label_mappings = {}
@@ -50,6 +51,6 @@ for label_name, label_params in label_mappings.items():
         str(parameter_mappings[lparam].get('Description', 'NO_DESCRIPTION'))
         ])
     writer.write_table()
-    with open ('docs/include/params.adoc', 'a') as p:
+    open(p_file, 'w').close()
+    with open (p_file, 'a') as p:
         p.write(pypandoc.convert_text(writer.stream.getvalue(), 'asciidoc', format='markdown'))
-
