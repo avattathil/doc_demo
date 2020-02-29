@@ -1,0 +1,5 @@
+requests
+cfn-lint
+pypandoc
+pytablewriter
+
