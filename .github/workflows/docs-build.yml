@@ -23,6 +23,7 @@ jobs:
         python-version: 3.7.6
     - name: install dependencies
       run: |
+           sudo apt-get install pandoc -y
            pip3 install -r docs/utils/requirements.txt
            docs/utils/generate_parms.py
     - name: Get build container
