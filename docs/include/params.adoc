@@ -1,4 +1,4 @@
-IMPORTANT: Updated on 2020-02-29 06:53:54
+IMPORTANT: Updated on 2020-02-29 07:00:05
 
 [[availability-zone-configuration]]
 Availability Zone Configuration
@@ -105,17 +105,16 @@ private subnets B, in format Key=Value (Optional)
 |**VPC Tenancy**(`VPCTenancy`) |default |The allowed tenancy of
 instances launched into the VPC
 |=======================================================================
-[[caution-deprecated-nat-instance-configuration]]
-CAUTION: DEPRECATED: NAT Instance Configuration
------------------------------------------------
+[[deprecated-nat-instance-configuration]]
+DEPRECATED: NAT Instance Configuration
+--------------------------------------
 
-[width="100%",cols="47%,7%,46%",options="header",]
+[width="100%",cols="46%,8%,46%",options="header",]
 |=======================================================================
 |Parameter label (name) |Default |Description
-|**CAUTION: DEPRECATED: Key pair name**(`KeyPairName`) |deprecated
-|CAUTION: DEPRECATED. NAT gateways are now supported in all regions.
+|**DEPRECATED: Key pair name**(`KeyPairName`) |deprecated |DEPRECATED.
+NAT gateways are now supported in all regions.
 
-|**CAUTION: DEPRECATED: NAT instance type**(`NATInstanceType`)
-|deprecated |CAUTION: DEPRECATED. NAT gateways are now supported in all
-regions.
+|**DEPRECATED: NAT instance type**(`NATInstanceType`) |deprecated
+|DEPRECATED. NAT gateways are now supported in all regions.
 |=======================================================================
