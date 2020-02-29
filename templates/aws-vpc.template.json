@@ -47,7 +47,7 @@
                 },
                 {
                     "Label": {
-                        "default": "REMOVE-ME: NAT Instance Configuration"
+                        "default": "CHANGE-ME: NAT Instance Configuration"
                     },
                     "Parameters": [
                         "KeyPairName",
@@ -66,10 +66,10 @@
                     "default": "Create private subnets"
                 },
                 "KeyPairName": {
-                    "default": "REMOVE-ME: Key pair name"
+                    "default": "CHANGE-ME: Key pair name"
                 },
                 "NATInstanceType": {
-                    "default": "REMOVE-ME: NAT instance type"
+                    "default": "CHANGE-ME: NAT instance type"
                 },
                 "NumberOfAZs": {
                     "default": "Number of Availability Zones"
@@ -170,13 +170,13 @@
             "Type": "String"
         },
         "KeyPairName": {
-            "Description": "REMOVE-ME. NAT gateways are now supported in all regions.",
+            "Description": "CHANGE-ME. NAT gateways are now supported in all regions.",
             "Type": "String",
             "Default": "deprecated"
         },
         "NATInstanceType": {
             "Default": "deprecated",
-            "Description": "REMOVE-ME. NAT gateways are now supported in all regions.",
+            "Description": "CHANGE-ME. NAT gateways are now supported in all regions.",
             "Type": "String"
         },
         "NumberOfAZs": {
