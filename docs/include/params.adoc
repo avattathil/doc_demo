@@ -1,7 +1,7 @@
-IMPORTANT: Updated on 2020-02-29 09:55:12
+IMPORTANT: Updated on 2020-02-29 10:11:01
 
 [[availability-zone-configuration]] Availability Zone Configuration
--------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 [width="100%",cols="27%,11%,62%",options="header",]
 |=======================================================================
@@ -14,7 +14,7 @@ preserved.
 Availability Zones to use in the VPC. This must match your selections in
 the list of Availability Zones parameter.
 |=======================================================================
-[[network-configuration]] Network Configuration ---------------------
+[[network-configuration]] Network Configuration ~~~~~~~~~~~~~~~~~
 
 [width="100%",cols="29%,4%,67%",options="header",]
 |=======================================================================
@@ -103,7 +103,7 @@ private subnets B, in format Key=Value (Optional)
 instances launched into the VPC
 |=======================================================================
 [[deprecated-nat-instance-configuration]] DEPRECATED: NAT Instance
-Configuration --------------------------------------
+Configuration ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 [width="100%",cols="46%,8%,46%",options="header",]
 |=======================================================================

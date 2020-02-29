@@ -49,6 +49,7 @@ with open(p_file, 'w') as new_params_file :
 
 for label_name, label_params in label_mappings.items():
     writer = MarkdownTableWriter()
+    writer.inc_indent_level()
     writer.table_name = label_name
     writer.headers = ["Parameter label (name)", "Default", "Description"]
     writer.value_matrix = []
