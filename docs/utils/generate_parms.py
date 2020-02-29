@@ -54,6 +54,7 @@ for label_name, label_params in label_mappings.items():
     writer.value_matrix = []
     writer.stream = io.StringIO()
     for lparam in label_params:
+        writer.set_indent_level(4)
         writer.value_matrix.append([
         f"**{str(parameter_labels.get(lparam, 'NO_LABEL'))}**<br>(`{lparam}`)",
         str(parameter_mappings[lparam].get('Default', determine_optional_value(lparam))),
@@ -62,6 +63,4 @@ for label_name, label_params in label_mappings.items():
     writer.write_table()
 
     with open (p_file, 'a') as p:
-        _adoc=pypandoc.convert_text(writer.stream.getvalue(), 'asciidoc', format='markdown')
-        print(_adoc)
-        p.write(pypandoc.convert_text(_adoc.replace("==", "==="), 'asciidoc', format='markdown'))
+        p.write(pypandoc.convert_text(writer.stream.getvalue(), 'asciidoc', format='markdown'))
