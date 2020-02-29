@@ -463,12 +463,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_step_2_launch_the_stack">Step 2. Launch the Stack</a></li>
 </ul>
 </li>
-<li><a href="#_availability_zone_configuration">Availability Zone Configuration</a></li>
-<li><a href="#_network_configuration">Network Configuration</a></li>
-<li><a href="#_remove_me_nat_instance_configuration">REMOVE-ME: NAT Instance Configuration</a></li>
 <li><a href="#availability-zone-configuration">Availability Zone Configuration</a></li>
 <li><a href="#network-configuration">Network Configuration</a></li>
-<li><a href="#remove-me-nat-instance-configuration">REMOVE-ME: NAT Instance Configuration</a>
+<li><a href="#old_not_used-nat-instance-configuration">OLD_NOT_USED: NAT Instance Configuration</a>
 <ul class="sectlevel2">
 <li><a href="#_step_3_add_aws_services_or_other_applications">Step 3. Add AWS Services or Other Applications</a></li>
 </ul>
@@ -1170,251 +1167,10 @@ subnet segmentation used for the VPC, as discussed earlier in the
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p><strong><strong>*Auto generated file</strong></strong>*</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_availability_zone_configuration">Availability Zone Configuration</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 27%;">
-<col style="width: 11%;">
-<col style="width: 62%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter label (name)</th>
-<th class="tableblock halign-left valign-top">Default</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Availability Zones</strong>(<code>AvailabilityZones</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Requires Input</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">List
-of Availability Zones to use for the subnets in the VPC. Note: The
-logical order is preserved.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Number of Availability Zones</strong>(<code>NumberOfAZs</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of
-Availability Zones to use in the VPC. This must match your selections in
-the list of Availability Zones parameter.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_network_configuration">Network Configuration</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 29%;">
-<col style="width: 4%;">
-<col style="width: 67%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter label (name)</th>
-<th class="tableblock halign-left valign-top">Default</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VPC CIDR</strong>(<code>VPCCIDR</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10.0.0.0/16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR block for the VPC</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Public subnet 1 CIDR</strong>(<code>PublicSubnet1CIDR</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10.0.128.0/20</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR
-block for the public DMZ subnet 1 located in Availability Zone 1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Public subnet 2 CIDR</strong>(<code>PublicSubnet2CIDR</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10.0.144.0/20</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR
-block for the public DMZ subnet 2 located in Availability Zone 2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Public subnet 3 CIDR</strong>(<code>PublicSubnet3CIDR</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10.0.160.0/20</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR
-block for the public DMZ subnet 3 located in Availability Zone 3</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Public subnet 4 CIDR</strong>(<code>PublicSubnet4CIDR</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10.0.176.0/20</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR
-block for the public DMZ subnet 4 located in Availability Zone 4</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tag for Public Subnets</strong>(<code>PublicSubnetTag1</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Network=Public</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tag to
-add to public subnets, in format Key=Value (Optional)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tag for Public Subnets</strong>(<code>PublicSubnetTag2</code>)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tag to add to public
-subnets, in format Key=Value (Optional)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tag for Public Subnets</strong>(<code>PublicSubnetTag3</code>)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tag to add to public
-subnets, in format Key=Value (Optional)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create private subnets</strong>(<code>CreatePrivateSubnets</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Set to false
-to create only public subnets. If false, the CIDR parameters for ALL
-private subnets will be ignored.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Private subnet 1A CIDR</strong>(<code>PrivateSubnet1ACIDR</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10.0.0.0/19</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR
-block for private subnet 1A located in Availability Zone 1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Private subnet 2A CIDR</strong>(<code>PrivateSubnet2ACIDR</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10.0.32.0/19</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR
-block for private subnet 2A located in Availability Zone 2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Private subnet 3A CIDR</strong>(<code>PrivateSubnet3ACIDR</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10.0.64.0/19</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR
-block for private subnet 3A located in Availability Zone 3</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Private subnet 4A CIDR</strong>(<code>PrivateSubnet4ACIDR</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10.0.96.0/19</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR
-block for private subnet 4A located in Availability Zone 4</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tag for Private A Subnets</strong>(<code>PrivateSubnetATag1</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Network=Private</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tag to add to private subnets A, in format Key=Value (Optional)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tag for Private A Subnets</strong>(<code>PrivateSubnetATag2</code>)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tag to add to
-private subnets A, in format Key=Value (Optional)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tag for Private A Subnets</strong>(<code>PrivateSubnetATag3</code>)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tag to add to
-private subnets A, in format Key=Value (Optional)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create additional private subnets with dedicated network
-ACLs</strong>(<code>CreateAdditionalPrivateSubnets</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Set to true to create a
-network ACL protected subnet in each Availability Zone. If false, the
-CIDR parameters for those subnets will be ignored. If true, it also
-requires that the `Create private subnets' parameter is also true to
-have any effect.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Private subnet 1B with dedicated network ACL
-CIDR</strong>(<code>PrivateSubnet1BCIDR</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10.0.192.0/21</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR block for private
-subnet 1B with dedicated network ACL located in Availability Zone 1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Private subnet 2B with dedicated network ACL
-CIDR</strong>(<code>PrivateSubnet2BCIDR</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10.0.200.0/21</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR block for private
-subnet 2B with dedicated network ACL located in Availability Zone 2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Private subnet 3B with dedicated network ACL
-CIDR</strong>(<code>PrivateSubnet3BCIDR</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10.0.208.0/21</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR block for private
-subnet 3B with dedicated network ACL located in Availability Zone 3</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Private subnet 4B with dedicated network ACL
-CIDR</strong>(<code>PrivateSubnet4BCIDR</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10.0.216.0/21</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CIDR block for private
-subnet 4B with dedicated network ACL located in Availability Zone 4</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tag for Private B Subnets</strong>(<code>PrivateSubnetBTag1</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Network=Private</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tag to add to private subnets B, in format Key=Value (Optional)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tag for Private B Subnets</strong>(<code>PrivateSubnetBTag2</code>)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tag to add to
-private subnets B, in format Key=Value (Optional)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tag for Private B Subnets</strong>(<code>PrivateSubnetBTag3</code>)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tag to add to
-private subnets B, in format Key=Value (Optional)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VPC Tenancy</strong>(<code>VPCTenancy</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The allowed tenancy of
-instances launched into the VPC</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_remove_me_nat_instance_configuration">REMOVE-ME: NAT Instance Configuration</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 46%;">
-<col style="width: 8%;">
-<col style="width: 46%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter label (name)</th>
-<th class="tableblock halign-left valign-top">Default</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>REMOVE-ME: Key pair name</strong>(<code>KeyPairName</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">deprecated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">REMOVE-ME. NAT
-gateways are now supported in all regions.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>REMOVE-ME: NAT instance type</strong>(<code>NATInstanceType</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">deprecated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">REMOVE-ME. NAT gateways are now supported in all regions.</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect1">
@@ -1630,7 +1386,7 @@ instances launched into the VPC</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="remove-me-nat-instance-configuration">REMOVE-ME: NAT Instance Configuration</h2>
+<h2 id="old_not_used-nat-instance-configuration">OLD_NOT_USED: NAT Instance Configuration</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1647,15 +1403,14 @@ instances launched into the VPC</p></td>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>REMOVE-ME: Key pair name</strong>(<code>KeyPairName</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OLD_NOT_USED: Key pair name</strong>(<code>KeyPairName</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deprecated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">REMOVE-ME. NAT
-gateways are now supported in all regions.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OLD_NOT_USED. NAT gateways are now supported in all regions.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>REMOVE-ME: NAT instance type</strong>(<code>NATInstanceType</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OLD_NOT_USED: NAT instance type</strong>(<code>NATInstanceType</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deprecated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">REMOVE-ME. NAT gateways are now supported in all regions.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OLD_NOT_USED. NAT gateways are now supported in all regions.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2086,7 +1841,7 @@ defaults</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-02-29 03:00:50 UTC
+Last updated 2020-02-29 03:06:55 UTC
 </div>
 </div>
 </body>
