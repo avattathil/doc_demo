@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 import io
 import requests
+import json
 import cfnlint
 import pypandoc
 from pytablewriter import MarkdownTableWriter
 
-r = requests.get('https://raw.githubusercontent.com/avattathil/doc_demo/master/templates/aws-vpc.template.yaml')
+r = requests.get('https://raw.githubusercontent.com/avattathil/doc_demo/master/templates/aws-vpc.template.json')
 
 template = cfnlint.decode.cfn_yaml.loads(r.content)
 
