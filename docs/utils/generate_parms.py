@@ -49,12 +49,12 @@ with open(p_file, 'w') as new_params_file :
 
 for label_name, label_params in label_mappings.items():
     writer = MarkdownTableWriter()
-    writer.inc_indent_level()
     writer.table_name = label_name
     writer.headers = ["Parameter label (name)", "Default", "Description"]
     writer.value_matrix = []
     writer.stream = io.StringIO()
     for lparam in label_params:
+        writer.set_indent_level(4)
         writer.value_matrix.append([
         f"**{str(parameter_labels.get(lparam, 'NO_LABEL'))}**<br>(`{lparam}`)",
         str(parameter_mappings[lparam].get('Default', determine_optional_value(lparam))),
@@ -63,5 +63,4 @@ for label_name, label_params in label_mappings.items():
     writer.write_table()
 
     with open (p_file, 'a') as p:
-        _adoc=pypandoc.convert_text(writer.stream.getvalue(), 'asciidoc', format='markdown')
-        p.write(pypandoc.convert_text(_adoc, 'asciidoc', format='markdown'))
+        p.write(pypandoc.convert_text(writer.stream.getvalue(), 'asciidoc', format='markdown'))
