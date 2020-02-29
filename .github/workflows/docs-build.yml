@@ -19,7 +19,8 @@ jobs:
            git restore -s master docs
     - name: Regenerate Parameter Tables
       run: |
-           pip install -r requirements.txt
+           sudo apt-get -y install python3-pip
+           pip install -r pip install -r docs/utils/requirements.txt
            docs/utils/generate_parms.py"
     - name: Get build container
       id: adoc
