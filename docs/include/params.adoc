@@ -1,4 +1,6 @@
-IMPORTANT: 2020-02-28 22:36:26== Availability Zone Configuration
+IMPORTANT: Updated on 2020-02-28 22:52:04
+
+== Availability Zone Configuration
 
 [width="100%",cols="27%,11%,62%",options="header",]
 |===
