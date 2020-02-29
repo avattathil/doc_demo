@@ -1,4 +1,5 @@
 requests
 cfn-lint
 pypandoc
-pytablewriter 
+pytablewriter
+
