@@ -3,8 +3,8 @@
 :includedir: include
 :icons: font
 :toc2: left
-:toc-title:  Start Reference Deployment
-:toclevels: 3
+:toc-title: Quick Start Reference Deployment
+:toclevels: 2
 
 include::{includedir}/css-switch.script[]
 
