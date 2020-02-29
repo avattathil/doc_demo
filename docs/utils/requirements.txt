@@ -4,4 +4,3 @@ pypandoc
 pytablewriter
 pathlib
 datetime
-json
