@@ -216,9 +216,9 @@ private subnets B, in format Key=Value (Optional)
 |**VPC Tenancy**(`VPCTenancy`) |default |The allowed tenancy of
 instances launched into the VPC
 |=======================================================================
-[[deprecated-nat-instance-configuration]]
-Deprecated: NAT Instance Configuration
---------------------------------------
+[[remove-me-deprecated-nat-instance-configuration]]
+REMOVE-ME Deprecated: NAT Instance Configuration
+------------------------------------------------
 
 [width="100%",cols="46%,8%,46%",options="header",]
 |=======================================================================
