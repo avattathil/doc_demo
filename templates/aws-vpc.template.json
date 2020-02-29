@@ -47,7 +47,7 @@
                 },
                 {
                     "Label": {
-                        "default": "CAUTION: DEPRECATED: NAT Instance Configuration"
+                        "default": "DEPRECATED: NAT Instance Configuration"
                     },
                     "Parameters": [
                         "KeyPairName",
@@ -66,10 +66,10 @@
                     "default": "Create private subnets"
                 },
                 "KeyPairName": {
-                    "default": "CAUTION: DEPRECATED: Key pair name"
+                    "default": "DEPRECATED: Key pair name"
                 },
                 "NATInstanceType": {
-                    "default": "CAUTION: DEPRECATED: NAT instance type"
+                    "default": "DEPRECATED: NAT instance type"
                 },
                 "NumberOfAZs": {
                     "default": "Number of Availability Zones"
@@ -170,13 +170,13 @@
             "Type": "String"
         },
         "KeyPairName": {
-            "Description": "CAUTION: DEPRECATED. NAT gateways are now supported in all regions.",
+            "Description": "DEPRECATED. NAT gateways are now supported in all regions.",
             "Type": "String",
             "Default": "deprecated"
         },
         "NATInstanceType": {
             "Default": "deprecated",
-            "Description": "CAUTION: DEPRECATED. NAT gateways are now supported in all regions.",
+            "Description": "DEPRECATED. NAT gateways are now supported in all regions.",
             "Type": "String"
         },
         "NumberOfAZs": {
