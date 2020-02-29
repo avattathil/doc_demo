@@ -9,16 +9,16 @@ jobs:
     runs-on: ubuntu-18.04
     name: asciidoc builder
     steps:
-    - name: Checkout
+    - name: Checkout (master)
       uses: actions/checkout@v2
-    - name: Get adoc file from master
+    - name: Get new doc updates 
       run: |
            git remote update
            git fetch
            git checkout --track origin/gh-pages
            rm -rf docs/*
            git restore -s master docs
-    - name: Regenerate Parameter Tables
+    - name: Setup python
       uses: actions/setup-python@v1
       with:
         python-version: 3.7.6
@@ -27,21 +27,19 @@ jobs:
            sudo apt-get install pandoc -y
            pip3 install -r docs/utils/requirements.txt
            docs/utils/generate_parms.py
-    - name: Get build container
+    - name: Build documentation
       id: adoc
       uses: avattathil/asciidoctor-action@master
       with:
           program: "asciidoctor --backend=html5 -o index.html -a toc2 docs/index.adoc"
-    - name: Push updates
+    - name: Stage changes gh-pages
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add -A
         git commit -a -m "Update documentation"
-    - name: Push changes
+    - name: Push updates to gh-pages
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GH_TOKEN }}
         branch: gh-pages
-    - name: Print execution time
-      run: echo "Time ${{ steps.adoc.outputs.time }}"
