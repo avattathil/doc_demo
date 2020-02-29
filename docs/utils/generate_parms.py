@@ -62,4 +62,6 @@ for label_name, label_params in label_mappings.items():
     writer.write_table()
 
     with open (p_file, 'a') as p:
-        p.write(pypandoc.convert_text(writer.stream.getvalue(), 'asciidoc', format='markdown'))
+        _adoc=pypandoc.convert_text(writer.stream.getvalue(), 'asciidoc', format='markdown')
+        print(_adoc)
+        p.write(pypandoc.convert_text(_adoc.replace("==", "==="), 'asciidoc', format='markdown'))
