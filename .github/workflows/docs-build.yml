@@ -17,6 +17,10 @@ jobs:
            git fetch 
            git checkout --track origin/gh-pages
            git restore -s master docs
+    - name: Regenerate Parameter Tables
+      run: |
+           pip install -r requirements.txt
+           docs/utils/generate_parms.py"
     - name: Get build container
       id: adoc
       uses: avattathil/asciidoctor-action@master

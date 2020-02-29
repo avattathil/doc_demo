@@ -5,7 +5,7 @@ import cfnlint
 import pypandoc
 from pytablewriter import MarkdownTableWriter
 
-r = requests.get('https://raw.githubusercontent.com/aws-quickstart/quickstart-aws-vpc/master/templates/aws-vpc.template')
+r = requests.get('https://raw.githubusercontent.com/avattathil/doc_demo/master/templates/aws-vpc.template.yaml')
 
 template = cfnlint.decode.cfn_yaml.loads(r.content)
 
@@ -49,6 +49,6 @@ for label_name, label_params in label_mappings.items():
         str(parameter_mappings[lparam].get('Description', 'NO_DESCRIPTION'))
         ])
     writer.write_table()
-    with open ('../include/params.adoc', 'a') as p:
+    with open ('docs/include/params.adoc', 'a') as p:
         p.write(pypandoc.convert_text(writer.stream.getvalue(), 'asciidoc', format='markdown'))
 
