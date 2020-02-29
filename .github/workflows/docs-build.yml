@@ -16,6 +16,7 @@ jobs:
            git remote update
            git fetch
            git checkout --track origin/gh-pages
+           rm -rf docs/*
            git restore -s master docs
     - name: Regenerate Parameter Tables
       uses: actions/setup-python@v1
@@ -30,7 +31,7 @@ jobs:
       id: adoc
       uses: avattathil/asciidoctor-action@master
       with:
-          program: "asciidoctor -D docs --backend=html5 -o index.html -a toc2 docs/index.adoc"
+          program: "asciidoctor --backend=html5 -o index.html -a toc2 docs/index.adoc"
     - name: Push updates
       run: |
         git config --local user.email "action@github.com"
