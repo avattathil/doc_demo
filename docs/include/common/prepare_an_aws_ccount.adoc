@@ -1,5 +1,3 @@
-=== Step 1. Prepare an AWS Account
-
 [arabic]
 . If you don’t already have an AWS account, create one at
 https://aws.amazon.com by following the on-screen instructions. Part of
