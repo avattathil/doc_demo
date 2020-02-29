@@ -44,7 +44,7 @@ with open(p_file, 'w') as new_params_file :
     _nl = '\n'
     _now = datetime.datetime.now()
     _ts_now=_now.strftime("%Y-%m-%d %H:%M:%S")
-    new_params_file.write(f'IMPORTANT: Updated on {_ts_now}{_nl}{_nl}')
+    new_params_file.write(f'IMPORTANT: Input parameter updated on {_ts_now}{_nl}{_nl}')
 
 
 for label_name, label_params in label_mappings.items():
