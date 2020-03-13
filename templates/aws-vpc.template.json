@@ -6,7 +6,7 @@
             "ParameterGroups": [
                 {
                     "Label": {
-                        "default": "Availability Zone Configuration"
+                        "default": "Availability zone Configuration"
                     },
                     "Parameters": [
                         "AvailabilityZones",
