@@ -1,7 +1,7 @@
-IMPORTANT: Last Change to input parameters on: 2020-02-29 11:20:34
+IMPORTANT: Last Change to input parameters on: 2020-03-13 18:41:26
 
 [[availability-zone-configuration]]
-Availability Zone Configuration
+Availability zone Configuration
 
 [width="100%",cols="27%,11%,62%",options="header",]
 |=======================================================================
