@@ -74,7 +74,7 @@ You can visit our [GitHub repository] to download
 the templates and scripts for this Quick Start, to post your comments,
 and to share your customizations with others.
 
-_Autogenerate GitHub Info_
+https://github.com/{github_id}/{repository}/workflows/{workflow_name}/badge.svg?branch=develop)
 
 == Document Revisions
 
