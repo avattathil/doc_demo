@@ -29,7 +29,7 @@ jobs:
            docs/utils/generate_parms.py
     - name: Build documentation
       id: adoc
-      uses: avattathil/asciidoctor-action@master
+      uses: andrew-glenn/nosalt@master
       with:
           program: "asciidoctor --backend=html5 -o index.html -a toc2 docs/index.adoc"
     - name: Stage changes gh-pages
